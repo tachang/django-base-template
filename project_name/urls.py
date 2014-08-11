@@ -10,3 +10,7 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
 )
+
+urlpatterns += patterns('project_name.views.home',
+   url(r'^$', 'index', name='index'),
+)

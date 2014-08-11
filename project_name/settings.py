@@ -10,8 +10,17 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from os.path import abspath, basename, dirname, join, normpath
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
+# Absolute filesystem path to the Django project directory:
+DJANGO_ROOT = dirname(dirname(abspath(__file__)))
+
+# Absolute filesystem path to the top-level project folder:
+SITE_ROOT = dirname(DJANGO_ROOT)
+
+# Site name:
+SITE_NAME = basename(DJANGO_ROOT)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
@@ -51,6 +60,17 @@ ROOT_URLCONF = 'project_name.urls'
 
 WSGI_APPLICATION = 'project_name.wsgi.application'
 
+
+TEMPLATE_LOADERS = (
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader',
+)
+
+TEMPLATE_DIRS = (
+    join(BASE_DIR, 'project_name/templates'),
+)
+
+print TEMPLATE_DIRS
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases

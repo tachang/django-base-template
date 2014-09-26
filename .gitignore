@@ -38,4 +38,4 @@ tramp
 Thumbs.db
 Desktop.ini
 
-project_name/assets/.sass-cache
+{{ project_name }}/assets/.sass-cache

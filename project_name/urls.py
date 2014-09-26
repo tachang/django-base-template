@@ -5,12 +5,12 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    # url(r'^$', 'project_name.views.home', name='home'),
+    # url(r'^$', '{{ project_name }}.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
 )
 
-urlpatterns += patterns('project_name.views.home',
+urlpatterns += patterns('{{ project_name }}.views.home',
    url(r'^$', 'index', name='index'),
 )
